@@ -5,9 +5,44 @@ const choiceElem = document.getElementById('multichoices');
 const option1 = document.querySelector('#option1')
 const option2 = document.querySelector('#option2')
 const option3 = document.querySelector('#option3')
-const showResultElem = document.querySelector('#result')
+const showResultElem = document.querySelector('result')
+const showResultBtn = document.getElementById('showresultbtn')
+const startBtn = document.getElementById('start-btn')
+const homeElem = document.getElementById ('home')
 
+startBtn.onclick = startAssessment;
 
+//the elements that wont change (the score total and amount of questions)
+const max_questions = 4
+let currentQuestion = 0
+
+startPageElem = document.getElementById('home');
+function startAssessment() {
+    // startPageElem.setAttribute('class', 'hidden');
+    // questionsElem.removeAttribute('class');
+    
+    homeElem.setAttribute('class', 'hidden')
+
+    questionsElem.style.display = 'block' // SHOW QUESTIONS
+    // present first question and options
+    questionAskedElem.innerHTML = questionsList[currentQuestion].question
+    option1.innerHTML = questionsList[currentQuestion].choices[0]
+    option2.innerHTML = questionsList[currentQuestion].choices[1]
+    option3.innerHTML = questionsList[currentQuestion].choices[2]
+
+}
+
+function endAssessment() {
+  // startPageElem.setAttribute('class', 'hidden');
+  // questionsElem.removeAttribute('class');
+  
+  homeElem.setAttribute('class', 'hidden')
+
+  questionsElem.setAttribute('class', 'hidden')  // HIDE QUESTIONS
+ 
+  showResultBtn.style.display = 'block'; //show result button
+  
+}
 //questions
 let questionsList = [
     {
@@ -34,26 +69,6 @@ let questionsList = [
         choices: ['Within the USA', 'Canada', 'Rest of the world'],
     }
 ];   
-//the elements that wont change (the score total and amount of questions)
-const max_questions = 4
-let currentQuestion = 0
-
-startPageElem = document.getElementById('home');
-//functions - telling the game to start game and start timer
-startAssessment = () => {
-    // startPageElem.setAttribute('class', 'hidden');
-    // questionsElem.removeAttribute('class');
-    
-    
-    questionsElem.style.display = 'block' // SHOW QUESTIONS
-    // present first question and options
-    questionAskedElem.innerHTML = questionsList[currentQuestion].question
-    option1.innerHTML = questionsList[currentQuestion].choices[0]
-    option2.innerHTML = questionsList[currentQuestion].choices[1]
-    option3.innerHTML = questionsList[currentQuestion].choices[2]
-
-}
-
 function chooseAnswer (event) {
   currentQuestion = currentQuestion + 1
   let answer;
@@ -84,6 +99,7 @@ function chooseAnswer (event) {
     }
 
 }
+
 
 // EVENT LISTNERS
 
