@@ -1,44 +1,24 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CryptoCurrently</title>
-    <!--stylesheet-->
-    <link rel="stylesheet" href="./style.css" />
-  
-</head>
-<!--main screen content-->
-<body>
-    <nav>
+    <head>
+        <title>Assessment</title><meta name="viewport" content="width=device-width"/>
+        <script src="https://unpkg.com/jquery"></script>
+        <script src="https://unpkg.com/survey-jquery@1.8.37/survey.jquery.min.js"></script>
+        <link href="https://unpkg.com/survey-knockout@1.8.37/modern.css" type="text/css" rel="stylesheet"/>
+        <link rel="stylesheet" href="./style.css"></head>
+        <link rel="stylesheet" href="./index.html"></head>
+
+    <body>
+      <nav>
         <ul>
             <li><a href="./index.html">Home</a>
             <a href="./secondpage.html">Assessment</a>
             <li><a href="">Testimonials</a></li>
         </ul>
     </nav>
-
-  <div class="container">
-    <div id="home" class="flex-column flex-center">
-      <h1>Take Our Quick Assessment</h1>
-     <button class="startBtn" id="start-btn">Start Assessment Here</button> 
-   </div>
-
-    <div id="questions" class="hidden">
-        <h2 id="question-asked"></h2>
-        <ul id="multichoices" class="multichoices">
-          <ul class="answer"><button class="btn" id="option1">Question 1</button></ul>
-          <ul class="answer"><button class="btn" id="option2">Question 2</button></ul>
-          <ul class="answer"><button class="btn" id="option3">Question 3</button></ul>
-        </ul>
-    </div>
-        <div id="showresultbtn" class="display hidden">
-        <button class="show-result" id="result">Show Me My Result</button>
-    </div>
-
-
-  
-</div>
-<script src="./questions.js"></script>  
-</body>
+        <div id="surveyElement" style="display:inline-block;width:100%;"></div>
+        <div id="surveyResult"></div>
+        <script type="text/javascript" src="./questions.js"></script>
+    </body>
 </html>
