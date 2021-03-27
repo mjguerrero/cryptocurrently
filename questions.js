@@ -8,7 +8,7 @@ const surveyValueChanged = function (sender, options) {
         el.value = options.value;
     }
 };
-//questions to display to user
+//questions to display to user ---
 const json = {
     questions: [
         {
