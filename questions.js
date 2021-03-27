@@ -42,9 +42,21 @@ const json = {
 
 window.survey = new Survey.Model(json);
 
+
 survey
     .onComplete
     .add(function (result) {
         document.querySelector('#surveyResult')
             });
+          
     $("#surveyElement").Survey({model: survey, onValueChanged: surveyValueChanged});
+   
+function createItem() {
+      localStorage.setItem('survey', 'value'); 
+    } 
+    createItem() // Creates a item named 'survey' and stores a value of 'value'
+    
+function getValue() {
+      return localStorage.getItem('survey');  
+    } // Gets the value of 'survey' and returns it
+   
