@@ -1,38 +1,29 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CryptoCurrently</title>
-    <!--stylesheet-->
-  
-</head>
-<!--main screen content-->
-<body>
-
-  <div class="container">
-    <div id="home" class="flex-column flex-center">
-      <h1>Take Our Quick Assessment</h1>
-      
-    </div>
-
-    <div id="questions" class="hidden">
-        <h2 id="question-asked"></h2>
-        <ul id="multichoices" class="multichoices">
-          <ul class="answer"><button class="btn" id="option1">Quesstion 1</button></ul>
-          <ul class="answer"><button class="btn" id="option2">Question 2</button></ul>
-          <ul class="answer"><button class="btn" id="option3">Question 3</button></ul>
-        </ul>
+    <head>
+        <title>Assessment</title><meta name="viewport" content="width=device-width"/>
+        <script src="https://unpkg.com/jquery"></script>
+        <script src="https://unpkg.com/survey-jquery@1.8.37/survey.jquery.min.js"></script>
+        <link href="https://unpkg.com/survey-knockout@1.8.37/modern.css" type="text/css" rel="stylesheet"/>
+        <link rel="stylesheet" href="./style.css"></head>
         
-        <button class="show-result" id="result" display hidden>Show Me My Result</button>
-    </div>
-  
-  </div>
 
-  </div>
+    <body>
+      <nav>
+        <ul>
+            <a href="./index.html">Home</a>
+            <a href="./secondpage.html">Assessment</a>
+            <a href="">Testimonials</a>
+        </ul>
+    </nav>
+        <div id="surveyElement" style="display:inline-block;width:100%;"></div>
+        <div id="surveyResult"></div>
+        <script type="text/javascript" src="./questions.js"></script>
+        <script src="https://unpkg.com/jquery"></script>
+        <script src="https://unpkg.com/survey-jquery@1.8.37/survey.jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
-  
-</div>
-<script src="./questions.js"></script>  
-</body>
+
+    </body>
 </html>
