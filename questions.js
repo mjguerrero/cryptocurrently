@@ -31,7 +31,7 @@ const submitForm = e => {
       answer4 = option.id
     }
   })
-  // MAKE A FETCH WITH ANSWERS
+  // MAKE A FETCH WITH ANSWERS -bitcoin currency fetch
   const url = `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${answer1}`
   fetch(url)
     .then(res => res.json())
