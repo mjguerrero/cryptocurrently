@@ -5,6 +5,7 @@ const question3 = Array.from(document.querySelectorAll('input[name = "term"]'))
 const question4 = Array.from(document.querySelectorAll('input[name = "invest"]'))
 const submitBtn = document.getElementById('submitComplete')
 // FUNCTIONS
+
 const submitForm = e => {
   // add form validation:
   // if the answers are not undefined, continue,
