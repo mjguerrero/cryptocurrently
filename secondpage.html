@@ -1,98 +1,29 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sana's Form</title>
-</head>
-<body>
-  <form>
-    <!-- quesiton -->
-    <div class="question-1">
-      <div class="input-group">
-        <h3>Which currency would you like to purchase in?</h3>
-  
-        <select name="question1" id="question1">
-          <option value="usd">USD</option>
-          <option value="cad">CAD</option>
-          <option value="gbp">GBP</option>
-          <option value="eur">EUR</option>
-          <option value="other">OTHER</option>
-        </select>
-      </div>
-    </div>
+    <head>
+        <title>Assessment</title><meta name="viewport" content="width=device-width"/>
+        <script src="https://unpkg.com/jquery"></script>
+        <script src="https://unpkg.com/survey-jquery@1.8.37/survey.jquery.min.js"></script>
+        <link href="https://unpkg.com/survey-knockout@1.8.37/modern.css" type="text/css" rel="stylesheet"/>
+        <link rel="stylesheet" href="./style.css"></head>
+        
 
-    <!-- question -->
-    <div class="question-2">
-      <h3>How many months of experience do you have with crypto currency?</h3>
-      
-      <div class="input-group">
-        <input type="radio" id="0-3mo" name="experience" value="0-3mo">
-        <label for="0-3mo">0-3 months</label>
-      </div>
-      <div class="input-group">
-        <input type="radio" id="3-6mo" name="experience" value="3-6mo">
-        <label for="3-6mo">3-6 months</label>
-      </div>
-      <div class="input-group">
-        <input type="radio" id="6-12mo" name="experience" value="6-12mo checked">
-        <label for="6-12mo">6-12 months</label>
-      </div>
-      <div class="input-group">
-        <input type="radio" id="12plus" name="experience" value="12plus">
-        <label for="12plus">12 months +</label>
-      </div>
-    </div>
+    <body>
+      <nav>
+        <ul>
+            <a href="./index.html">Home</a>
+            <a href="./secondpage.html">Assessment</a>
+            <a href="">Testimonials</a>
+        </ul>
+    </nav>
+        <div id="surveyElement" style="display:inline-block;width:100%;"></div>
+        <div id="surveyResult"></div>
+        <script type="text/javascript" src="./questions.js"></script>
+        <script src="https://unpkg.com/jquery"></script>
+        <script src="https://unpkg.com/survey-jquery@1.8.37/survey.jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
-    <!-- question -->
-    <div class="question-3">
-      <h3>Is this for a long term or short term investment?</h3>
-      
-      <div class="input-group">
-        <input type="radio" id="longTerm" name="term" value="longTerm">
-        <label for="longTerm">long-term</label>
-      </div>
-      <div class="input-group">
-        <input type="radio" id="shortTerm" name="term" value="shortTerm">
-        <label for="shortTerm">short-term</label>
-      </div>
-      <div class="input-group">
-        <input type="radio" id="termUndecided" name="term" value="termUndecided">
-        <label for="termUndecided">undecided</label>
-      </div>
-    </div>
 
-    <!-- question -->
-    <div class="question-4">
-      <h3>How much are you looking to invest?</h3>
-      
-      <div class="input-group">
-        <input type="radio" id="300orLess" name="invest" value="300orLess">
-        <label for="300orLess">$300 or less</label>
-      </div>
-      
-      <div class="input-group">
-        <input type="radio" id="300-500" name="invest" value="300-500">
-        <label for="300-500">$300-$500</label>
-      </div>
-      
-      <div class="input-group">
-        <input type="radio" id="500orMore" name="invest" value="500orMore">
-        <label for="500orMore">$500 +</label>
-      </div>
-      
-      <div class="input-group">
-        <input type="radio" id="investUndecided" name="invest" value="investUndecided">
-        <label for="investUndecided">$300 or less</label>
-      </div>
-    </div>
-
-    <!-- submit button -->
-    <div class="input-group">
-      <button type="submit" id="submitComplete">Complete</button>
-    </div>
-  </form>
-
-  <script src="./questions.js"></script>
-</body>
+    </body>
 </html>
