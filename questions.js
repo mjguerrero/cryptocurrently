@@ -1,62 +1,44 @@
-Survey
-    .StylesManager
-    .applyTheme("modern");
+// DOM SELECTORS
+const question1 = document.getElementById('question1')
+const question2 = Array.from(document.querySelectorAll('input[name = "experience"]'))
+const question3 = Array.from(document.querySelectorAll('input[name = "term"]'))
+const question4 = Array.from(document.querySelectorAll('input[name = "invest"]'))
+const submitBtn = document.getElementById('submitComplete')
+// FUNCTIONS
 
-const surveyValueChanged = function (sender, options) {
-    let el = document.getElementById(options.name);
-    if (el) {
-        el.value = options.value;
+const submitForm = e => {
+  // add form validation:
+  // if the answers are not undefined, continue,
+  // if answers are undefined, display error message
+  e.preventDefault()
+  // GET ANSWERS FROM FORM
+  let answer1
+  let answer2
+  let answer3
+  let answer4
+  answer1 = question1.value
+  question2.forEach(option => {
+    if(option.checked) {
+      answer2 = option.id
     }
-};
-//questions to display to user ---
-const json = {
-    questions: [
-        {
-          type: "dropdown",
-          isRequired: true,
-          name: "Which currency would you like to purchase in?",
-          choices: ['USD', 'CAD', 'GBP', 'EUR', 'Other']
-            
-        },{
-          type: "checkbox",
-          name: "How many months of experience do you have with crypto currency",
-          isRequired: true,
-          colRow: 2,
-          choices: ["0-3 months", '3-6 months', '6-12 months', '12 months +']
-        }, {
-          type: "checkbox",
-          name: "Is this for a long term or short term investment?",
-          isRequired: true,
-          colRow: 2,
-          choices: ["long-term", 'short-term', 'undecided',]
-        }, {
-          type: "checkbox",
-          title: "How much are you looking to invest?",
-          isRequired: true,
-          colCount: 2,
-          choices: ['$300 or less', '$300-$500', '$500+', 'undecided',]
-                
-        }
-    ]
-};
-
-window.survey = new Survey.Model(json);
-
-
-survey
-    .onComplete
-    .add(function (result) {
-        document.querySelector('#surveyResult')
-            });
-          
-    $("#surveyElement").Survey({model: survey, onValueChanged: surveyValueChanged});
-   
-function createItem() {
-      localStorage.setItem('survey', 'value'); 
-    } 
-    createItem() // Creates a item named 'survey' and stores a value of 'value'
-    
-function getValue() {
-      return localStorage.getItem('survey');  
-    } // Gets the value of 'survey' and returns it
-   
+  })
+  question3.forEach(option => {
+    if(option.checked) {
+      answer3 = option.id
+    }
+  })
+  question4.forEach(option => {
+    if(option.checked) {
+      answer4 = option.id
+    }
+  })
+  // MAKE A FETCH WITH ANSWERS -bitcoin currency fetch
+  const url = `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${answer1}`
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+    })
+}
+// EVENT LISTNERS
+submitBtn.addEventListener('click', submitForm)
