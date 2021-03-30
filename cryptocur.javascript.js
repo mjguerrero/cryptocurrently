@@ -108,3 +108,8 @@ fetch('https://api.coingecko.com/api/v3/search/trending')
     .then(function (data) {
         console.log(data)
     });
+
+
+let dataFromAPI;
+
+const user0 = document.getElementById('user0')
