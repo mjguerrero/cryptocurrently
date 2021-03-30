@@ -17,17 +17,18 @@ const submitForm = e => {
   let answer4
   answer1 = question1.value
   question2.forEach(option => {
-    if(option.checked) {
+    if (option.checked) {
       answer2 = option.id
     }
   })
+  answer3 =question3.value 
   question3.forEach(option => {
-    if(option.checked) {
+    if (option.checked) {
       answer3 = option.id
     }
   })
   question4.forEach(option => {
-    if(option.checked) {
+    if (option.checked) {
       answer4 = option.id
     }
   })
@@ -38,6 +39,11 @@ const submitForm = e => {
     .then(data => {
       console.log(data)
     })
+    const url = `'https://api.coingecko.com/api/v3/coins/binancecoin?localization=true&tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=false'=${answer3}`
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
 }
 // EVENT LISTNERS
 submitBtn.addEventListener('click', submitForm)
