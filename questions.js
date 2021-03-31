@@ -47,5 +47,6 @@ const submitForm = e => {
       console.log(data)
     })
 }
+
 // EVENT LISTNERS
 submitBtn.addEventListener('click', submitForm)
