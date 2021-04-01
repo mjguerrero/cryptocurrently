@@ -40,7 +40,7 @@ const submitForm = e => {
   })
 
 
-  // MAKE A FETCH WITH ANSWERS
+  // MAKE A FETCH FROM API
   const url = `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${answer1}`
   fetch(url)
     .then(res => res.json())
@@ -50,7 +50,6 @@ const submitForm = e => {
     window.location.replace("./cryptocur.html")
     })
 }
-
 
 // EVENT LISTNERS
 submitBtn.addEventListener('click', submitForm)

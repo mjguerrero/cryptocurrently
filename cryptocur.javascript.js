@@ -1,8 +1,9 @@
-//long term - stable
-let data1 = localStorage.getItem('responseData')
+//getting the item from local storage
+function responseData (){
+let question1 = localStorage.getItem('responseData')
+}
 
-console.log('from local storage', data1)
-
+//long term stable
 fetch('https://api.coingecko.com/api/v3/coins/binancecoin?localization=true&tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=false')
     .then(function (response) {
         console.log(response)
