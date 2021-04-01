@@ -1,8 +1,4 @@
-let newsApiKey="Ru8s6q0ueCP-5BqBnbs_8QvvfU0cn0_rKsnxBQhdKplRWMzx"
-
-
-//long term - stable
-
+//long term stable
 fetch('https://api.coingecko.com/api/v3/coins/binancecoin?localization=true&tickers=true&market_data=true&community_data=true&developer_data=true&sparkline=false')
     .then(function (response) {
         console.log(response)

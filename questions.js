@@ -35,6 +35,7 @@ const submitForm = e => {
   question4.forEach(option => {
     if(option.checked) {
       answer4 = option.id
+      console.log('answer1', 'answer2', 'answer3', 'answer4')
     }
   })
   //let coinName; <--- coinName needs a value after the assessment is done
@@ -44,13 +45,17 @@ const submitForm = e => {
   localStorage.setItem('coinName2', coinName2)
   window.location.assign("./cryptocur.html")
 
-  // MAKE A FETCH WITH ANSWERS
-  // const url = `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${answer1}`
-  // fetch(url)
-  //   .then(res => res.json())
-  //   .then(data => {
-  //     console.log(data)
-  //   })
+
+  // MAKE A FETCH FROM API
+  const url = `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${answer1}`
+  fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      console.log("data", data)
+    localStorage.setItem ('responseData', data);
+    window.location.replace("./cryptocur.html")
+    })
+
 }
 
 // EVENT LISTNERS
