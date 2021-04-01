@@ -45,8 +45,8 @@ const submitForm = e => {
   fetch(url)
     .then(res => res.json())
     .then(data => {
-      console.log("data", data)
-    localStorage.setItem ('responseData', data);
+    console.log("data", data)
+    localStorage.setItem ('resta', data);
     window.location.replace("./cryptocur.html")
     })
 }
