@@ -1,0 +1,107 @@
+body{
+    padding:0 0;
+    margin:0 0;
+    font-family: cursive
+}
+
+.header{
+    background: url("banner.jpg") no-repeat center top;
+    background-size: cover;
+    background-position: center;
+    background-size:cover;
+    min-height: 550px;
+}
+
+.navbar {
+    padding-top: -9px;
+    float:right;
+}
+
+h1{
+    font-size: 30px;
+    color: #fff;
+    margin: 10px;
+    float: left;
+}
+
+.navbar ul li{
+    display: inline-block;
+    padding: 5px 15px 0px 15px;
+}
+
+.navbar ul li a{
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: initial;
+}
+
+.navbar ul li a:hover {
+    color: #EF664D;
+}
+
+h3 {
+    font-size: 35px;
+    color: #EF664D;
+    text-align: center;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+.bio {
+    text-align: center;
+}
+
+.assessment {
+    padding: 50px 0;
+    background: #2E3E4E;
+}
+
+.assessment {
+    text-align: center;
+}
+
+input {
+    background-color: #EF664D;
+    border: none;
+    color: whitesmoke;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 50%;
+}
+
+.input {
+    transition-duration: 0.4s;
+}
+
+.input:hover {
+    background-color: gray;
+    color: white;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-container > div {
+    background-color:#2e3e4e;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.footer {
+    padding: 30px;
+    clear: both;
+    font-family: cursive;
+    text-align: center;
+    color: wheat;
+}
+
+iframe {
+    padding-top: 50px;
+}
