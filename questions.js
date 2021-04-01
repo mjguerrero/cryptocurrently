@@ -35,6 +35,7 @@ const submitForm = e => {
   question4.forEach(option => {
     if(option.checked) {
       answer4 = option.id
+      console.log('answer1', 'answer2', 'answer3', 'answer4')
     }
   })
 
@@ -44,9 +45,12 @@ const submitForm = e => {
   fetch(url)
     .then(res => res.json())
     .then(data => {
-      console.log(data)
+      console.log("data", data)
+    localStorage.setItem ('responseData', data);
+    window.location.replace("./cryptocur.html")
     })
 }
+
 
 // EVENT LISTNERS
 submitBtn.addEventListener('click', submitForm)
