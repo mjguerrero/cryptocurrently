@@ -38,6 +38,12 @@ const submitForm = e => {
       console.log('answer1', 'answer2', 'answer3', 'answer4')
     }
   })
+  //let coinName; <--- coinName needs a value after the assessment is done
+  let coinName1 = 'bitcoin';
+  let coinName2 = 'dogecoin';
+  localStorage.setItem('coinName1', coinName1)
+  localStorage.setItem('coinName2', coinName2)
+  window.location.assign("./cryptocur.html")
 
 
   // MAKE A FETCH FROM API
@@ -49,7 +55,9 @@ const submitForm = e => {
     localStorage.setItem ('resta', data);
     window.location.replace("./cryptocur.html")
     })
+
 }
 
 // EVENT LISTNERS
 submitBtn.addEventListener('click', submitForm)
+
