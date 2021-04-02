@@ -1,7 +1,6 @@
 // DOM SELECTORS
 const assessForm = document.getElementById("assessmentForm")
 const question1 = document.getElementById('question1')
-//const question2 = Array.from(document.querySelectorAll('input[name = "experience"]'))
 const question2 = Array.from(document.querySelectorAll('input[name = "term"]'))
 const question3 = Array.from(document.querySelectorAll('input[name = "invest"]'))
 const submitBtn = document.getElementById('submitComplete')
@@ -71,22 +70,9 @@ if (answer3 === "300orLess" ){
 
 
 
-  //let coinName; <--- coinName needs a value after the assessment is done
-  
-  // localStorage.setItem('coinName1', coinName1)
-  // localStorage.setItem('coinName2', coinName2)
+
   window.location.assign("./cryptocur.html")
 
-
-  // // MAKE A FETCH FROM API
-  // // const url = `https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${answer1}`
-  // // fetch(url)
-  // //   .then(res => res.json())
-  // //   .then(data => {
-  // //   console.log("data", data)
-  // //   localStorage.setItem ('answer1', 'answer2', 'answer3', data);
-  //   window.location.replace("./cryptocur.html")
-  //   })
 
 }
 
@@ -102,15 +88,14 @@ submitBtn.addEventListener('click', function(e){
   if (question1.value !== "") {
       formIsValid++ 
   }
-  //console.log("checking q2")
+ 
   for (let i = 0; i < question2.length; i++) {
     if (question2[i].checked == true) {
       formIsValid++
     }
     
   } 
-  //console.log("checking q3")
-  //console.log("the form is valid = "+formIsValid)
+  
   for (let i = 0; i < question3.length; i++) {
     if (question3[i].checked == true) {
       formIsValid++ 
