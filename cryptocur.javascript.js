@@ -1,3 +1,4 @@
+
 // newsapi
 let newsApiKey="Ru8s6q0ueCP-5BqBnbs_8QvvfU0cn0_rKsnxBQhdKplRWMzx"
 
@@ -5,6 +6,7 @@ let newsApiKey="Ru8s6q0ueCP-5BqBnbs_8QvvfU0cn0_rKsnxBQhdKplRWMzx"
 function responseData (){
 let question1 = localStorage.getItem('responseData')
 }
+
 
 
 //long term stable
@@ -285,3 +287,42 @@ fetch('https://api.coingecko.com/api/v3/search/trending')
     .then(function (data) {
         console.log(data)
     });
+
+
+//News API starts here   
+let coinName1 = localStorage.getItem('coinName1')
+let coinName2 = localStorage.getItem('coinName2')
+fetch("https://api.currentsapi.services/v1/search?keywords="+coinName1+"&language=en&apiKey=" + newsApiKey)
+    .then(function (response) {
+        console.log(response)
+        return response.json()
+    })
+
+    .then(function (data) {
+        $(".news").append ('<div> <h3>'+coinName1+' News</h3></div>');
+
+        for (i=0; i < 2; i++){
+            //using <a> tag to make article title clickable 
+            $(".news").append ('<p> <a href="'+data.news[i].url+'">'+data.news[i].title+'</a></p>');
+        }
+        // $('#coinTitle').text(data.news[0].title)
+        // $('#coinUrl').text(data.news[0].url)
+    });
+
+fetch("https://api.currentsapi.services/v1/search?keywords="+coinName2+"&language=en&apiKey=" + newsApiKey)
+    .then(function (response) {
+        console.log(response)
+        return response.json()
+    })
+
+    .then(function (data) {
+        $(".news").append ('<div> <h3>'+coinName2+' News</h3></div>');
+        for (i=0; i < 2; i++){
+            //using <a> tag to make article title clickable 
+            $(".news").append ('<p> <a href="'+data.news[i].url+'">'+data.news[i].title+'</a></p>');
+        }
+        // $('#coinTitle').text(data.news[0].title)
+        // $('#coinUrl').text(data.news[0].url)
+    });
+
+

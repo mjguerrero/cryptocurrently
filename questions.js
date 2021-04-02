@@ -1,20 +1,15 @@
 // DOM SELECTORS
+const assessForm = document.getElementById("assessmentForm")
 const question1 = document.getElementById('question1')
 const question2 = Array.from(document.querySelectorAll('input[name = "experience"]'))
 const question3 = Array.from(document.querySelectorAll('input[name = "term"]'))
 const question4 = Array.from(document.querySelectorAll('input[name = "invest"]'))
 const submitBtn = document.getElementById('submitComplete')
-
-
+console.log(question1.value)
 // FUNCTIONS
 const submitForm = e => {
-  // add form validation:
-  // if the answers are not undefined, continue,
-  // if answers are undefined, display error message
-
-  e.preventDefault()
-
-
+  
+  
   // GET ANSWERS FROM FORM
   let answer1
   let answer2
@@ -35,9 +30,17 @@ const submitForm = e => {
   question4.forEach(option => {
     if(option.checked) {
       answer4 = option.id
-      console.log('answer1', 'answer2', 'answer3', 'answer4')
+     
     }
   })
+
+ 
+  //let coinName; <--- coinName needs a value after the assessment is done
+  let coinName1 = 'bitcoin';
+  let coinName2 = 'dogecoin';
+  localStorage.setItem('coinName1', coinName1)
+  localStorage.setItem('coinName2', coinName2)
+  window.location.assign("./cryptocur.html")
 
 
   // MAKE A FETCH FROM API
@@ -46,10 +49,39 @@ const submitForm = e => {
     .then(res => res.json())
     .then(data => {
     console.log("data", data)
-    localStorage.setItem ('resta', data);
+    localStorage.setItem ('answer1', 'answer2', 'answer3', data);
     window.location.replace("./cryptocur.html")
     })
+
 }
 
+
 // EVENT LISTNERS
-submitBtn.addEventListener('click', submitForm)
+
+submitBtn.addEventListener('click', function(e){
+  // Run validation
+  e.preventDefault()
+  let formIsValid = false
+  
+  for (let i = 0; i < question3.length; i++) {
+    if (question3[i].checked == true) {
+      formIsValid = true
+    
+    }
+    
+  } console.log("checking q3")
+  console.log("the form is valid = "+formIsValid)
+  for (let i = 0; i < question4.length; i++) {
+    if (question4[i].checked == true) {
+      formIsValid = true 
+    
+    }
+    
+  }console.log("checking q4")
+  console.log("the form is valid = "+formIsValid)
+    if (formIsValid === true) {
+     submitForm()
+      
+    }
+
+}) 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sana's Form</title>
+  <title>Form</title>
 
  <!-- Compressed CSS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
@@ -21,57 +21,30 @@
     <li class="breadcrumb-counter-nav-item"><a href="#">Result</a></li>
   </ul>
   
-<!--Assessment Form-->
-  <form>
-    <!-- <div class="wide-article-link">
-      <div class="row">
-        <div class="small-12 medium-9 columns">
-          <h4 class="article-title">
-            <a href="#"> -->
-
-
+<!--Header-->>
 <div class="card news-card">
-  <!-- <img src="./Foundation-Sites-6.6.3-CSS 3/assets/images.jpeg"> -->
   <div class="card-section">
-
     <div class="grid-x grid-padding-x align-center-middle text-center" style="height: 200px;">
       <div class="cell small-4">
         <h6>Please answer the questions below so we can help you get started.</h6></div>
-    
-    </div>
+   </div>
+<!--Assessment Form-->
+    <form id="assessmentForm" onsubmit=submitForm()>
     <div class="question-1">
       <div class="input-group">
-        <h3>Which currency would you like to purchase in?</h3>
+        <h3>Which crypto coin are you most interested in?</h3>
         <select name="question1" id="question1">
-          <option value="usd">USD</option>
-          <option value="cad">CAD</option>
-          <option value="gbp">GBP</option>
-          <option value="eur">EUR</option>
+          <option value="cardano">Cardano</option>
+          <option value="ripple">Ripple</option>
+          <option value="iota">Iota</option>
+          <option value="ethereum">Ethereum</option>
         </select>
       </div>
     </div>
+
+    
     <!-- questions on the assessment -->
-    <!-- <div class="question-2">
-      <h3>How many months of experience do you have with crypto currency?</h3>
-      <div class="input-group">
-        <input type="radio" id="0-3mo" name="experience" value="0-3mo">
-        <label for="0-3mo">0-3 months</label>
-      </div>
-      <div class="input-group">
-        <input type="radio" id="3-6mo" name="experience" value="3-6mo">
-        <label for="3-6mo">3-6 months</label>
-      </div>
-      <div class="input-group">
-        <input type="radio" id="6-12mo" name="experience" value="6-12mo checked">
-        <label for="6-12mo">6-12 months</label>
-      </div>
-      <div class="input-group">
-        <input type="radio" id="12plus" name="experience" value="12plus">
-        <label for="12plus">12 months +</label>
-      </div>
-    </div> -->
-    <!-- questions on the assessment -->
-    <div class="question-3">
+    <div class="question-2">
       <h3>Is this for a long term or short term investment?</h3>
       <div class="input-group">
         <input type="radio" id="longTerm" name="term" value="longTerm">
@@ -87,10 +60,10 @@
       </div>
     </div>
       <!-- questions on the assessment -->
-    <div class="question-4">
+    <div class="question-3">
       <h3>How much are you looking to invest?</h3>
       <div class="input-group">
-        <input type="radio" id="300orLess" name="invest" value="300orLess">
+        <input type="radio" id="300orLess" name="invest"  value="300orLess">
         <label for="300orLess">$300 or less</label>
       </div>
       <div class="input-group">
@@ -105,6 +78,8 @@
     <!-- submit button to go to the results page-->
     <div class="input-group">
       <button type="submit" id="submitComplete" class="hollow button" href="#">Complete</button>
+     
+      </button>
     </div>
   </div>
 </div>
@@ -112,7 +87,12 @@
 </div>
   </form>
 <!-- Javascript -->
-  <script src="./questions.js"></script>
+
+  </div>
+</div>
+
+
+<script src="./questions.js"></script>
   
 </body>
 </html>
