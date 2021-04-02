@@ -28,13 +28,53 @@ const submitForm = e => {
     }
   })
 
-  //
- 
+//
+//retrieving api news and coin content based on answer 1
+localStorage.setItem('coinNews1', answer1)
+localStorage.setItem('coinInfo1', answer1)
+if (answer2 === "longTerm" ){
+  //pulling api for users who selected long-term
+  let termCoin1 = 'bitcoin';
+  let termCoin2 = 'ethereum';
+  localStorage.setItem('termCoin1', termCoin1)
+  localStorage.setItem('termCoin2', termCoin2)
+}else if (answer2 === "shortTerm" ){
+  //pulling api for users who selected short-term
+  let termCoin1 = 'dogecoin';
+  let termCoin2 = 'iota';
+  localStorage.setItem('termCoin1', termCoin1)
+  localStorage.setItem('termCoin2', termCoin2)
+}else {
+  //pulling api for users who selected undecided
+  let termCoin1 = 'ethereum';
+  let termCoin2 = 'dogecoin';
+  localStorage.setItem('termCoin1', termCoin1)
+  localStorage.setItem('termCoin2', termCoin2)
+}
+
+if (answer3 === "300orLess" ){
+  //pulling api for users who selected 300orLess
+  let termCoin3 = 'cardano';
+  localStorage.setItem('coinNews2', termCoin3)//added news 
+  localStorage.setItem('termCoin3', termCoin3)
+}else if (answer3 === "300-500" ){
+  //pulling api for users who selected 300-500
+  let termCoin3 = 'ripple';
+  localStorage.setItem('coinNews2', termCoin3)//added news 
+  localStorage.setItem('termCoin3', termCoin3)
+}else {
+  //pulling api for users who selected undecided
+  let termCoin3 = 'bitcoin';
+  localStorage.setItem('coinNews2', termCoin3)//added news 
+  localStorage.setItem('termCoin3', termCoin3)
+}
+
+
+
   //let coinName; <--- coinName needs a value after the assessment is done
-  let coinName1 = question1.value
-  let coinName2 = 'dogecoin';
-  localStorage.setItem('coinName1', coinName1)
-  localStorage.setItem('coinName2', coinName2)
+  
+  // localStorage.setItem('coinName1', coinName1)
+  // localStorage.setItem('coinName2', coinName2)
   window.location.assign("./cryptocur.html")
 
 
