@@ -1,4 +1,3 @@
-
 // newsapi
 let newsApiKey="Ru8s6q0ueCP-5BqBnbs_8QvvfU0cn0_rKsnxBQhdKplRWMzx"
 
@@ -116,5 +115,3 @@ fetch("https://api.currentsapi.services/v1/search?keywords="+coinNews2+"&languag
         // $('#coinTitle').text(data.news[0].title)
         // $('#coinUrl').text(data.news[0].url)
     });
-
-
