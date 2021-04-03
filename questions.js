@@ -59,27 +59,24 @@ if (answer2 === "longTerm" ){
 }
 
 if (answer3 === "300orLess" ){
-  //pulling api for users who selected 300orLess
-  let termCoin3 = 'cardano';
-  localStorage.setItem('coinNews2', termCoin3)//added news 
-  localStorage.setItem('termCoin3', termCoin3)
-}else if (answer3 === "300-500" ){
-  //pulling api for users who selected 300-500
-  let termCoin3 = 'ripple';
-  localStorage.setItem('coinNews2', termCoin3)//added news 
-  localStorage.setItem('termCoin3', termCoin3)
-}else {
-  //pulling api for users who selected undecided
-  let termCoin3 = 'bitcoin';
-  localStorage.setItem('coinNews2', termCoin3)//added news 
-  localStorage.setItem('termCoin3', termCoin3)
-}
-
-
+    //pulling api for users who selected 300orLess
+    let termCoin3 = 'cardano';
+    localStorage.setItem('coinNews2', termCoin3)//added news 
+    localStorage.setItem('termCoin3', termCoin3)
+  }else if (answer3 === "300-500" ){
+    //pulling api for users who selected 300-500
+    let termCoin3 = 'ripple';
+    localStorage.setItem('coinNews2', termCoin3)//added news 
+    localStorage.setItem('termCoin3', termCoin3)
+  }else {
+    //pulling api for users who selected undecided
+    let termCoin3 = 'bitcoin';
+    localStorage.setItem('coinNews2', termCoin3)//added news 
+    localStorage.setItem('termCoin3', termCoin3)
+  }
 
 
   window.location.assign("./cryptocur.html")
-
 
 }
 
